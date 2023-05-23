@@ -30,6 +30,8 @@ $sql_detalles = $conexion->query("SELECT * FROM detalles");
       padding: 200px;
       background-color: #333333;
       color: #FFFFFF;
+      margin-right:-200;
+      margin-left:-177px;
     }
 
     .footer h3 {
@@ -52,6 +54,32 @@ $sql_detalles = $conexion->query("SELECT * FROM detalles");
 
     }
 
+    .final{
+      background-color: #767676;
+			color: white;
+			padding: 11px;
+			text-align: center;
+			position: relative;
+			bottom: -320px;
+			left: 201;
+			height: 19px;
+			width: 561px;
+      padding-right:22px;
+      margin-left:-170x;
+		}
+		.final nav {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: -6px;
+		}
+
+
+.ultimas-entradas{
+  margin-left:66px;
+  margin-right:3px;
+  margin-bottom:183px;
+}
     .media {
       width: 360px;
       height: 260px;
@@ -313,6 +341,7 @@ $sql_detalles = $conexion->query("SELECT * FROM detalles");
     }
 
     div#pie1 {
+      margin-left:-130px;
       border: 2px solid red;
       width: 280px; height: 280px;
       float: left;
@@ -414,6 +443,7 @@ $sql_detalles = $conexion->query("SELECT * FROM detalles");
       <div class="maps">
         <h2>Donde estamos</h2>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.054704660767!2d-73.9850996845932!3d40.74844097932847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a6e5e9a6d7%3A0x5b8a5b5c8c4b8f9e!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1653270346669!5m2!1sen!2sus" width="270" height="230" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
            <div class="ultimas-entradas">
         <h3>Ultimas Entradas</h3>
         <ul>
@@ -421,6 +451,16 @@ $sql_detalles = $conexion->query("SELECT * FROM detalles");
           <li>Entrada 2</li>
           <li>Entrada 3</li>
         </ul>
+        </div>
+        <div class="final">
+        <nav>
+          <ul>
+          <li>Inicio</li>
+          <li>Detalles</li>
+          <li>Artículos</li>
+          <li>Contacto</li>
+          <li>Acceso Privado<li>
+          <ul>
       </div>
     </div>
   </div>
