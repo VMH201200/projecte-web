@@ -1,6 +1,7 @@
 <?php 
 include ("php/Conexion.php"); 
 $sql_detalles = $conexion->query("SELECT * FROM articles");
+$sql_Categorias = $conexion->query("SELECT * FROM Categorias");
 ?>
 
 
@@ -94,6 +95,15 @@ $sql_detalles = $conexion->query("SELECT * FROM articles");
           bottom: 150px;
           border:1px solid red;
     
+        }
+
+        .sidebar{
+          margin-right:500px;
+
+        }
+
+        .sidebar h2{
+          margin-top: 200px;
         }
     
         .gallery li {
@@ -331,6 +341,16 @@ $sql_detalles = $conexion->query("SELECT * FROM articles");
       padding-bottom:200px;
       border: 1px solid red;
         }
+
+        .Categorias{
+          margin-left:917px;
+          margin-top:-1660px;
+          position: absolute;
+        }
+
+        .popular{
+
+        }
         
         div#video{
             padding-bottom:70px;
@@ -376,6 +396,7 @@ $sql_detalles = $conexion->query("SELECT * FROM articles");
     <div class="sidebar">
         <h2>Artículos</h2>
         <?php      
+        var_dump($sql_detalles);
         while($fila=$sql_detalles->fetch_array()){
         $id=$fila[0];
         $titulo=$fila[1];
@@ -397,10 +418,38 @@ $sql_detalles = $conexion->query("SELECT * FROM articles");
               <?php
        }
        ?>
-        // Cerrar la conexión con la base de datos
-        $conn->close();
-        ?>
     </div>
+    <div class="Categorias">
+      <h2>Categorías</h2>
+      <?php      
+        while($fila=$sql_Categorias->fetch_array()){
+        $id_categoria=$fila[0];
+        $Categoria=$fila[1];
+        ?>
+              <h1><?php echo $id_categoria;?></h1>
+              <p><?php echo $Categoria;?></p>
+              <?php
+       }
+       ?>
+       </div>
+       <div class="popular">
+       <h2>Artículos más populares</h2>
+      <?php    
+      var_dump($sql_detalles);  
+      while($fila=$sql_detalles->fetch_array()){
+          $titulo_1=$fila[0];
+          $id_categoria_1=$fila[1];
+          $Imagen_1=$fila[2];
+          ?>
+                <h1><?php echo $titulo_1;?></h1>
+                <h1><?php echo $id_categoria_1;?></h1>
+                <p><img src="img/detalles/<?php echo $Imagen_1;?>" width="100" ></p>
+
+                <?php
+        }
+        ?>
+                </div>
+
     <div class="content">
         <!-- Contenido adicional del apartado principal -->
     </div>
