@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalles</title>
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px;
+  background-color: #333333;
+  color: #FFFFFF;
+}
+
+.footer h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.container {
+      max-width: 1170px;
+      margin: 0 auto;
+    }
+
+    .logo-area {
+      width: 280px;
+      height: 55px;
+      float: left;
+      border:1px solid red;
+
+    }
+
+    nav {
+      float: right;
+    }
+    .logo {
+      width: 180px;
+      height: 55px;
+      border: 1px solid red;
+    }
+
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav>ul>li {
+      display: inline-block;
+    }
+
+    nav ul li a {
+      display: block;
+      padding: 10px;
+      background-color: grey;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav ul li a:hover {
+      background-color: orange;
+    }
+
+    nav ul li ul li a {
+      background-color: rgb(56, 56, 56);
+      color: black;
+    }
+
+    nav ul li ul li a:hover {
+      background-color: darkorange;
+    }
+
+    nav ul li:hover>ul {
+      display: block;
+    }
+
+    nav ul li ul {
+      display: none;
+      position: absolute;
+    }
+
+    div#contenedor {
+      margin: 0px auto;
+    }
+
+.imagen-recortada {
+  left:320px;
+  bottom:30px;
+  position:absolute;
+  clip: rect(0px, 49px, 48px, 0px);
+  border: 1px solid red;
+}
+
+.imagen-recortada:hover {
+  left:320px;
+  bottom:85px;
+  position:absolute;
+  clip: rect(49px, 48px, 231px, 0px);
+  border: 1px solid red;
+}
+
+.social-media a {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+        #contenido {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            margin: 1px solid red;
+        
+        }
+        #datos-derecha {
+            text-align: left;
+        }
+        .boton {
+            display: inline-block;
+            background-color: black;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+        .enlace {
+            color: orange;
+            text-decoration: none;
+        }
+        body {
+      background-image: url('img/page-bg-1.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    p.limpiar {clear: both;}
+
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <div class="logo-area">
+          <img src="img/logo.png" alt="Logo" class="logo">
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Detalles</a></li>
+            <li><a href="#">Artículos</a>
+              <ul>
+                <li><a href="#">Service A</a></li>
+                <li><a href="#">Service B</a></li>
+                <li><a href="#">Service C</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </nav>
+    <div id="contenido">
+        <img src="img/user-avatar.jpg" alt="Imagen grande" width="450" height="530" >
+        <div id="datos-derecha">
+            <h1>Título</h1>
+            <p>Pequeña descripción</p>
+            <p>Texto</p>
+            <p>Textos inferiores</p>
+            <span style="display: flex; justify-content: flex-start;">
+                <a href="https://ejemplo.com/enlace-externo" class="boton" width="30" height="30" style="margin-right: 100px; border-radius: 10px;">Más Información</a>
+                <img src="img/sprite_prev.png" alt="Descripción de la imagen" >
+                <a href="index.html" class="enlace">Volver...</a>
+            </span>
+        </div>
+    </div>
+        <div class="footer">
+            <div class="about-us">
+              <h3>Sobre Nosotros</h3>
+              <img src="img/logo.png" alt="Logo" class="logo" width="180" height="55">
+            </div>
+      
+            <div class="social-media">
+              <ul>
+                <li><img src="img/social-icons.png" alt="facebook"class="imagen-recortada" ></a></li>
+                <li><a href="#" class="twitter"></a></li>
+                <li><a href="#" class="instagram"></a></li>
+              </ul>
+            </div>
+    </div>
+</body>
+</html>
