@@ -103,6 +103,10 @@ $sql_detalles = $conexion->query("SELECT * FROM detalles");
       margin: 0px auto;
     }
 
+    .social-media{
+      margin-left:-10;
+    }
+
     .social-media ul li {
       width: 47px;height:47px;float: left;
       background-image: url("img/social-icons.png");
@@ -141,6 +145,7 @@ $sql_detalles = $conexion->query("SELECT * FROM detalles");
         }
         #datos-derecha {
             text-align: left;
+            margin-top: 100;
         }
         .boton {
             display: inline-block;
@@ -187,18 +192,19 @@ $sql_detalles = $conexion->query("SELECT * FROM detalles");
           <img src="img/logo.png" alt="Logo" class="logo">
         </div>
         <nav>
+        <ul>
+        <li><a href="https://www.vicentemagraner.com.es/proyecto_solvam/index.php">Home</a></li>
+        <li><a href="https://www.vicentemagraner.com.es/proyecto_solvam/detalles.php">Detalles</a></li>
+        <li><a href="https://www.vicentemagraner.com.es/proyecto_solvam/blog.php">Artículos</a>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Detalles</a></li>
-            <li><a href="#">Artículos</a>
-              <ul>
-                <li><a href="#">Service A</a></li>
-                <li><a href="#">Service B</a></li>
-                <li><a href="#">Service C</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="https://www.vicentemagraner.com.es/proyecto_solvam/blog.php?id_categoria=1">General</a></li>
+            <li><a href="https://www.vicentemagraner.com.es/proyecto_solvam/blog.php?id_categoria=2">Terapias</a></li>
+            <li><a href="https://www.vicentemagraner.com.es/proyecto_solvam/blog.php?id_categoria=3">Técnicas</a></li>
           </ul>
+        </li>
+        <li><a href="https://www.vicentemagraner.com.es/proyecto_solvam/contacto.php">Contacto</a></li>
+        <li><a href="#">Acceso privado</a></li>
+      </ul>
         </nav>
     <div id="contenido">
         <div id="datos-derecha">
@@ -210,7 +216,7 @@ $sql_detalles = $conexion->query("SELECT * FROM detalles");
       $inferior=$fila[3];
       $imagen=$fila[5];
       ?>
-            <img src="img/detalles/<?php echo $imagen;?>" alt="Gray">
+            <img src="img/detalles/<?php echo $imagen;?>" width="100" alt="Gray">
             <h1><?php echo $titulo;?></h1>
             <p><?php echo $descripcion;?></p>
             <p><?php echo $texto;?></p>
@@ -220,19 +226,21 @@ $sql_detalles = $conexion->query("SELECT * FROM detalles");
      ?>
     
             <span style="display: flex; justify-content: flex-start;">
-                <a href="https://ejemplo.com/enlace-externo" class="boton" width="30" height="30" style="margin-right: 100px; border-radius: 10px;">Más Información</a>
+                <a href="https://www.vicentemagraner.com.es/proyecto_solvam/index.php" class="boton" width="30" height="30" style="margin-right: 100px; border-radius: 10px;">Más Información</a>
                 <img src="img/sprite_prev.png" alt="Descripción de la imagen" >
-                <a href="index.html" class="enlace">Volver...</a>
+                <a href="https://www.vicentemagraner.com.es/proyecto_solvam/index.php" class="enlace">Volver...</a>
             </span>
         </div>
     </div>
-        <div class="footer">
-            <div class="about-us">
-              <h3>Sobre Nosotros</h3>
-              <img src="img/logo.png" alt="Logo" class="logo" width="180" height="55">
-            </div>
-      
-            <div class="social-media">
+    <p class="limpiar"></p>
+    <div class="footer">
+      <div id="pie1">
+        <div class="about-us">
+          <h3>Sobre Nosotros</h3>
+          <img src="img/logo.png" alt="Logo" class="logo">
+        </div>
+
+        <div class="social-media">
           <ul>
             <li></li>
             <li></li>
@@ -241,18 +249,28 @@ $sql_detalles = $conexion->query("SELECT * FROM detalles");
 
           </ul>
         </div>
+      </div>
 
       <div class="media">
         <h2>Galería de fotos</h2>
-        <iframe width="360" height="230" src="https://www.youtube.com/embed/_hXkqxVMh3U" frameborder="0" allowfullscreen></iframe>
+        <iframe width="360" height="230" src="https://www.youtube.com/embed/_hXkqxVMh3U" frameborder="0"
+          allowfullscreen></iframe>
       </div>
       <div class="maps">
         <h2>Donde estamos</h2>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.054704660767!2d-73.9850996845932!3d40.74844097932847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a6e5e9a6d7%3A0x5b8a5b5c8c4b8f9e!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1653270346669!5m2!1sen!2sus" width="270" height="230" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.054704660767!2d-73.9850996845932!3d40.74844097932847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a6e5e9a6d7%3A0x5b8a5b5c8c4b8f9e!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1653270346669!5m2!1sen!2sus"
+          width="270" height="230" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <div class="ultimas-entradas">
+          <h3>Ultimas Entradas</h3>
+          <ul>
+            <li>Entrada 1</li>
+            <li>Entrada 2</li>
+            <li>Entrada 3</li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
 
-  </div>
-    </div>
 </body>
 </html>
