@@ -124,7 +124,11 @@ $sql_populares = $conexion->query("SELECT * FROM articles limit 3");
           text-align: center;
           box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
         }
-    
+     
+
+ img {
+    width: 100px;
+}
         .gallery img {
           width: 270px;
           height: 220px;
@@ -409,7 +413,6 @@ $sql_populares = $conexion->query("SELECT * FROM articles limit 3");
         .popular{
           margin-left: 900px;
     margin-top: -1693;
-
         }
         
         div#video{
@@ -472,7 +475,7 @@ $sql_populares = $conexion->query("SELECT * FROM articles limit 3");
               <p><?php echo $fecha_publicacion;?></p>
               <p><?php echo $id_autor;?></p>
               <p><?php echo $id_categoria;?></p>
-              <p><img src="img/blog/<?php echo $Imagen;?>" width="100" ></p>
+              <p><img src="img/blog/<?php echo $Imagen;?>" width="100"></p>
               <p><?php echo $Visitas;?></p>
               <?php
        }

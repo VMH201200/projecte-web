@@ -1,6 +1,14 @@
 <?php 
 include ("php/Conexion.php"); 
 $sql_detalles = $conexion->query("SELECT * FROM detalles");
+if (isset($_GET['id_detalles'])) {
+  $id_detalles = $_GET['id_detalles'];
+
+  $sql_detalles = $conexion->query("SELECT * FROM detalles WHERE id_detalles=$id_detalles");
+} else {
+  $sql_detalles = $conexion->query("SELECT * FROM detalles");
+
+}
 ?>
 
 

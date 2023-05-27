@@ -364,7 +364,7 @@ if (isset($_GET['id_detalles'])) {
           </ul>
         </li>
         <li><a href="https://www.vicentemagraner.com.es/proyecto_solvam/contacto.php">Contacto</a></li>
-        <li><a href="#">Acceso privado</a></li>
+        <li><a href="http://localhost:8080/projecte_web/Autors.jsp">Acceso privado</a></li>
       </ul>
     </nav>
     <p class="limpiar"></p>
@@ -393,8 +393,9 @@ if (isset($_GET['id_detalles'])) {
       <li>
         <img src="img/detalles/<?php echo $imagen;?>" alt="Gray">
         <div class="buttons">
-        <button onclick="location.href='detalles.php?id_detalles=<?php echo $id_detalles; ?>'"></button>
-          <button class="detalles"></button>
+                    <button class="lupa" ></button>
+
+          <button class="detalles"onclick="location.href='detalles.php?id_detalles=<?php echo $id_detalles; ?>'"></button>
         </div>
         <h3><?php echo $titulo;?></h3>
       </li>
