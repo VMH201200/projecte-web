@@ -1,6 +1,17 @@
 <?php 
 include ("php/Conexion.php"); 
 $sql_detalles = $conexion->query("SELECT * FROM detalles");
+if (isset($_GET['id_detalles'])) {
+  $id_detalles = $_GET['id_detalles'];
+
+  $sql_detalles = $conexion->query("SELECT * FROM detalles WHERE id_categoria=$id_detalles");
+} else {
+  $sql_detalles = $conexion->query("SELECT * FROM detalles");
+
+}
+$query = $conexion->query("SELECT * FROM articles ORDER BY fecha_publicacion DESC LIMIT 3");
+
+
 
 
 ?>
@@ -22,18 +33,17 @@ $sql_detalles = $conexion->query("SELECT * FROM detalles");
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
   * {margin:0px;padding: 0px;}
-    .footer {
+   
+  .footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 250px;
-      padding: 200px;
+      padding: 100px;
       background-color: #333333;
       color: #FFFFFF;
-      margin-right:-200;
-      margin-left:-177px;
+      width:1167px;
+      margin-left:-104;
     }
-
     .footer h3 {
       margin: 0;
       padding: 0;
@@ -44,6 +54,14 @@ $sql_detalles = $conexion->query("SELECT * FROM detalles");
       margin: 0;
       padding: 0;
     }
+    .footer li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    .ultimas-entradas{
+      width:70px;
+    }
 
     .maps{
       width: 270px;
@@ -53,33 +71,8 @@ $sql_detalles = $conexion->query("SELECT * FROM detalles");
       float:right;
 
     }
+    
 
-    .final{
-      background-color: #767676;
-			color: white;
-			padding: 11px;
-			text-align: center;
-			position: relative;
-			bottom: -320px;
-			left: 201;
-			height: 19px;
-			width: 561px;
-      padding-right:22px;
-      margin-left:-170x;
-		}
-		.final nav {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			margin-top: -6px;
-		}
-
-
-.ultimas-entradas{
-  margin-left:66px;
-  margin-right:3px;
-  margin-bottom:183px;
-}
     .media {
       width: 360px;
       height: 260px;
@@ -141,6 +134,29 @@ $sql_detalles = $conexion->query("SELECT * FROM detalles");
       box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
     }
 
+    p {
+        font-family: 'Oswald', sans-serif;
+    }
+    h2 {
+
+        font-family: 'Oswald', sans-serif;
+    }
+
+    h3 {
+        font-family: 'Oswald', sans-serif;
+        font-weight: 600;
+
+    }
+
+    h6 {
+      
+        font-family: 'Oswald', sans-serif;
+    }
+
+    li{
+      font-family: 'Oswald', sans-serif;
+
+    }
     .gallery img {
       width: 270px;
       height: 220px;
@@ -158,6 +174,7 @@ $sql_detalles = $conexion->query("SELECT * FROM detalles");
 
     .gallery .buttons {
       background-size: cover;
+      background-color: aquamarine;
       background-repeat: no-repeat;
     }
 
@@ -206,7 +223,7 @@ $sql_detalles = $conexion->query("SELECT * FROM detalles");
 
     .logo {
       width: 180px;
-      height: 55px;
+      height: 151px;
       border: 1px solid red;
     }
 
@@ -224,22 +241,23 @@ $sql_detalles = $conexion->query("SELECT * FROM detalles");
     nav ul li a {
       display: block;
       padding: 10px;
-      background-color: grey;
+      background-color: blue;
       color: white;
       text-decoration: none;
     }
 
     nav ul li a:hover {
-      background-color: orange;
+      background-color: aquamarine;
     }
 
     nav ul li ul li a {
       background-color: rgb(56, 56, 56);
-      color: black;
+      color: white;
+      background-color: blue;
     }
 
     nav ul li ul li a:hover {
-      background-color: darkorange;
+      background-color: aquamarine;
     }
 
     nav ul li:hover>ul {
@@ -286,7 +304,7 @@ $sql_detalles = $conexion->query("SELECT * FROM detalles");
     }
 
     div#galeria div {
-      top: 80px;
+      top: 100px;
       left: 100px;
       position: absolute;
       border: 1px solid red;
@@ -341,7 +359,6 @@ $sql_detalles = $conexion->query("SELECT * FROM detalles");
     }
 
     div#pie1 {
-      margin-left:-130px;
       border: 2px solid red;
       width: 280px; height: 280px;
       float: left;
@@ -365,29 +382,30 @@ $sql_detalles = $conexion->query("SELECT * FROM detalles");
 <body>
   <div id="contenedor">
     <div class="logo-area">
-      <img src="img/logo.png" alt="Logo" class="logo">
+      <img src="img/logo.png" alt="Logo" class="logo" height>
     </div>
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Detalles</a></li>
-        <li><a href="#">Artículos</a>
+        <li><a href="https://www.vicentemagraner.com.es/proyecto_solvam/index.php">Home</a></li>
+        <li><a href="https://www.vicentemagraner.com.es/proyecto_solvam/detalles.php">Detalles</a></li>
+        <li><a href="https://www.vicentemagraner.com.es/proyecto_solvam/blog.php">Artículos</a>
           <ul>
-            <li><a href="#">Service A</a></li>
-            <li><a href="#">Service B</a></li>
-            <li><a href="#">Service C</a></li>
+            <li><a href="https://www.vicentemagraner.com.es/proyecto_solvam/blog.php?id_categoria=1">General</a></li>
+            <li><a href="https://www.vicentemagraner.com.es/proyecto_solvam/blog.php?id_categoria=2">Terapias</a></li>
+            <li><a href="https://www.vicentemagraner.com.es/proyecto_solvam/blog.php?id_categoria=3">Técnicas</a></li>
           </ul>
         </li>
-        <li><a href="#">Contacto</a></li>
+        <li><a href="https://www.vicentemagraner.com.es/proyecto_solvam/contacto.php">Contacto</a></li>
+        <li><a href="http://www.vicentemagraner.com.es:8080/vicentemagraner/projecte_web/webapp/accesprivat.jsp">Acceso privado</a></li>
       </ul>
     </nav>
     <p class="limpiar"></p>
     <div id="contenedor-galeria">
       <div id="galeria">
-        <div><img src="https://picsum.photos/400/200?random=1" /></div>
-        <div><img src="https://picsum.photos/400/200?random=2" /></div>
-        <div><img src="https://picsum.photos/400/200?random=3" /></div>
-        <div><img src="https://picsum.photos/400/200?random=4" /></div>
+        <div><img src="https://www.vicentemagraner.com.es/proyecto_solvam/img/detalles/ansiedad.jpg" width="400" height="200" /></div>
+        <div><img src="https://www.vicentemagraner.com.es/proyecto_solvam/img/detalles/mindfulness.jpeg" width="400" height="200" /></div>
+        <div><img src="https://www.vicentemagraner.com.es/proyecto_solvam/img/detalles/yoga.jpeg" width="400" height="200" /></div>
+        <div><img src="https://www.vicentemagraner.com.es/proyecto_solvam/img/detalles/EMDR.jpeg" width="400" height="200" /></div>
       </div>
     </div>
     <div class="gallery-content">
@@ -400,14 +418,14 @@ $sql_detalles = $conexion->query("SELECT * FROM detalles");
     <ul class="gallery">
     <?php
      while($fila=$sql_detalles->fetch_array()){
-        $id_detalles=$fila[0];
+    $id_detalles=$fila[0];
      $titulo=$fila[1];
      $imagen=$fila[5];
         ?>
       <li>
         <img src="img/detalles/<?php echo $imagen;?>" alt="Gray">
         <div class="buttons">
-          <button onclick="location.href='detalles.php'"></button>
+        <button onclick="location.href='detalles.php?id_detalles=<?php echo $id_detalles; ?>'"></button>
           <button class="detalles"></button>
         </div>
         <h3><?php echo $titulo;?></h3>
@@ -438,34 +456,31 @@ $sql_detalles = $conexion->query("SELECT * FROM detalles");
 
       <div class="media">
         <h2>Galería de fotos</h2>
-        <iframe width="360" height="230" src="https://www.youtube.com/embed/_hXkqxVMh3U" frameborder="0" allowfullscreen></iframe>
+        <iframe width="360" height="230" src="https://www.youtube.com/embed/_hXkqxVMh3U" frameborder="0"
+          allowfullscreen></iframe>
       </div>
       <div class="maps">
         <h2>Donde estamos</h2>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.054704660767!2d-73.9850996845932!3d40.74844097932847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a6e5e9a6d7%3A0x5b8a5b5c8c4b8f9e!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1653270346669!5m2!1sen!2sus" width="270" height="230" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-          </div>
-           <div class="ultimas-entradas">
-        <h3>Ultimas Entradas</h3>
-        <ul>
-          <li>Entrada 1</li>
-          <li>Entrada 2</li>
-          <li>Entrada 3</li>
-        </ul>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.054704660767!2d-73.9850996845932!3d40.74844097932847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a6e5e9a6d7%3A0x5b8a5b5c8c4b8f9e!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1653270346669!5m2!1sen!2sus"
+          width="270" height="230" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
-        <div class="final">
-        <nav>
-          <ul>
-          <li>Inicio</li>
-          <li>Detalles</li>
-          <li>Artículos</li>
-          <li>Contacto</li>
-          <li>Acceso Privado<li>
-          <ul>
+        <div class="ultimas-entradas">
+        <h3>Ultimas Entradas</h3>
+        <?php      
+      while($fila=$query->fetch_array()){
+        $titulo=$fila[1];
+        ?>
+        
+            <h6><?php echo $titulo;?></h6>
+
+          <?php
+      }
+      ?>
+        </div>
       </div>
     </div>
-  </div>
 
-  </div>
 </body>
 
 </html>

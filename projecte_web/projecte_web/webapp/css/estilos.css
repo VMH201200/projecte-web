@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+body { 
+  background-color: aquamarine; 
+}
+.col-sm {
+	text-align:center;
+	margin-top:140px;
+}
+
+.nombre {
+	margin-bottom: 30px;
+	margin-left:20px;
+}
+
+input.nombre{
+	border-radius:20px;
+}
+
+input.contrasena{
+	border-radius:20px;
+	margin-left:10px;
+}
+
+button{
+	margin-top:20px;
+	border-radius:10px;
+}
